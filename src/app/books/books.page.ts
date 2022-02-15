@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from './book.model';
+import { BooksService } from './books.service';
 
 @Component({
   selector: 'app-books',
@@ -7,25 +8,11 @@ import { Book } from './book.model';
   styleUrls: ['./books.page.scss'],
 })
 export class BooksPage implements OnInit {
-  books: Book[] = [
-    {
-    bookId: 'Mat',
-    bookName: 'Mateo',
-    chapter: 1,
-    verse: 1,
-    text: 'this is verse one'
-    },
-    {
-      bookId: 'Mar',
-      bookName: 'Marcos',
-      chapter: 1,
-      verse: 1,
-      text: 'this is verse one'
-      }
-];
-  constructor() { }
+  books: Book[];
+  constructor(private booksService: BooksService) { }
 
   ngOnInit() {
+    this.books = this.booksService.getAllBooks();
   }
 
 }
