@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Bible } from '../bible.model';
 import { Book } from '../book.model';
 import { BooksService } from '../books.service';
 
@@ -9,17 +10,21 @@ import { BooksService } from '../books.service';
   styleUrls: ['./book-detail.page.scss'],
 })
 export class BookDetailPage implements OnInit {
-  loadedBook: Book;
+  // loadedBook: Book;
+  loadedBook: Bible;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private booksService: BooksService
+    private booksService: BooksService,
+    private router: Router
     ) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap => {
-      if(!paramMap.has('bookId')){
-        //r redirect
+      if (!paramMap.has('bookId')){
+        // redirect
+        this.router.navigate(['/books']);
+        // console.log('Hindi gumana');
         return;
       }
       const bookId = paramMap.get('bookId');

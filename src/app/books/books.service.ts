@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Bible } from './bible.model';
 import { Book } from './book.model';
 
 @Injectable({
@@ -14,14 +15,14 @@ export class BooksService {
     text: 'this is verse one'
     },
     {
-    bookId: 'Mat',
+    bookId: 'Mat2',
     bookName: 'Mateo',
     chapter: 1,
     verse: 2,
     text: 'this is verse two'
     },
     {
-    bookId: 'Mat',
+    bookId: 'Mat3',
     bookName: 'Mateo',
     chapter: 1,
     verse: 3,
