@@ -10,7 +10,11 @@ ion-button[color="dark"] {
 }
 ion-content.myview {
   // --ion-background-color: pink;
-  --background: url(../../assets/images/bg.jpg);
+  // --background: url(../../assets/images/bg.jpg);
+  background-color: white;
+}
+.card {
+  height: 100%;
 }
 // .myview {
 //   background-image: url('../../assets/images/bg.jpg');
