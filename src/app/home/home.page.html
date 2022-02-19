@@ -1,10 +1,10 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Homepage
+      Bible
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <!-- credit to // credit to https://raw.githubusercontent.com/bibleapi/bibleapi-bibles-json/master/kjv.json -->
 <!-- <ion-content [fullscreen]="true"> -->
@@ -29,17 +29,30 @@
     </ion-slide>
 
   </ion-slides> -->
-
 <swiper [config]="swiperConfig">
-  <ng-template swiperSlide>
-    <div class="card">
-    <h1 class="ion-text-center top">2 John 1</h1>
-    <div class="cont"  *ngFor="let item of secJohn">
-      <h5>{{ item.verse }}</h5>
-      <p>{{ item.text }}</p>
-    </div>
-  </div> </ng-template>
-  <ng-template swiperSlide> Swiper Slide is Awesome 2</ng-template>
+  <ng-container *ngFor="let mat of filMat">
+    <ng-template swiperSlide>
+      <h1 class="ion-text-center top" > {{ mat.bookName }} {{ mat.chapter }} </h1>
+      <div class="card">
+        <ng-container *ngFor="let item of matt">
+        <!-- <h2>{{ i }}</h2> -->
+          <div class="cont">
+            <!-- <div class="cont" *ngIf="item.chapter === mat.chapter "> -->
+              <h5>{{ item.verse }}</h5>
+              <h5>{{ item.text }}</h5>
+            </div>
+          </ng-container>
+        </div>
+    </ng-template>
+  </ng-container>
+      <!--
   <ng-template swiperSlide> Swiper Slide is Awesome 3</ng-template>
+  <ng-template swiperSlide> Swiper Slide is Awesome 3</ng-template>
+  <ng-template swiperSlide> Swiper Slide is Awesome 3</ng-template>
+  <ng-template swiperSlide> Swiper Slide is Awesome 3</ng-template>
+  <ng-template swiperSlide> Swiper Slide is Awesome 3</ng-template>
+  <ng-template swiperSlide> Swiper Slide is Awesome 3</ng-template>
+  <ng-template swiperSlide> Swiper Slide is Awesome 3</ng-template> -->
 </swiper>
+
 </ion-content>

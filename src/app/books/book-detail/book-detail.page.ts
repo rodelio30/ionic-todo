@@ -11,7 +11,7 @@ import { BooksService } from '../books.service';
 })
 export class BookDetailPage implements OnInit {
   // loadedBook: Book;
-  loadedBook: Bible;
+  loadedBook: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,

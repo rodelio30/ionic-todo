@@ -13,8 +13,11 @@ ion-content.myview {
   // --background: url(../../assets/images/bg.jpg);
   background-color: white;
 }
+ng-template{
+  background-color: blue;
+}
 .card {
-  height: 100%;
+  background-color: pink;
 }
 // .myview {
 //   background-image: url('../../assets/images/bg.jpg');
@@ -41,5 +44,3 @@ ion-content.myview {
     font-weight: 200;
   }
 }
-
-

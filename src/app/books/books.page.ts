@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Bible } from './bible.model';
+import { BiblesService } from './bibles.service';
 import { Book } from './book.model';
 import { BooksService } from './books.service';
 
@@ -12,7 +13,9 @@ export class BooksPage implements OnInit {
   books: Book[];
   newTest: Bible[];
 
-  constructor(private booksService: BooksService) { }
+  constructor(
+    private booksService: BooksService
+    ) { }
 
   ngOnInit() {
     this.books = this.booksService.getAllBooks();
